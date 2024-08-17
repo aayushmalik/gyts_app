@@ -12,8 +12,8 @@ with open('./rwound_india.geojson') as f:
 df = pd.read_csv('./gyts4.csv')  # Replace with your actual data path
 
 # Streamlit app
-st.title('GYTS India 2019 Dashboard')
 st.set_page_config(page_title="GYTS App")
+st.title('GYTS India 2019 Dashboard')
 
 # Dropdown for selecting indicator
 indicator = st.selectbox('Select Indicator', sorted(df['Indicator'].unique()))
