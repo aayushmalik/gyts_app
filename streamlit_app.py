@@ -5,7 +5,7 @@ import geopandas as gpd
 import json
 
 # Load GeoJSON data
-with open('/Users/aayush.malik/Documents/AAYUSH/animal_census_app/rwound_india.geojson') as f:
+with open('./rwound_india.geojson') as f:
     geojson = json.load(f)
 
 # Load your data
