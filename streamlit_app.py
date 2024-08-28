@@ -9,7 +9,9 @@ with open("./rwound_india.geojson") as f:
     geojson = json.load(f)
 
 # Load your data
-df = pd.read_csv("./gyts4.csv")  # Replace with your actual data path
+df = pd.read_csv("./gyts4.csv")
+df = df[df["Indicator"] != "Average median age of tobacco initiation"]
+df = df[df["Indicator"] != "Ever tobacco users"]
 
 # Streamlit app
 st.set_page_config(page_title="GYTS App")
@@ -55,7 +57,7 @@ fig.update_layout(
     coloraxis_colorbar=dict(
         title="Percentage",
         tickvals=[df_filtered["Value"].min(), 0, df_filtered["Value"].max()],
-        ticktext=["No Data", "0", df_filtered["Value"].max()],
+        ticktext=["No Data", "0", round(df_filtered["Value"].max(), 2)],
     ),
 )
 
